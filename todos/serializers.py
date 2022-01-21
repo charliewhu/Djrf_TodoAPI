@@ -7,6 +7,7 @@ class TodoSerializer(serializers.ModelSerializer):
         model = Todo
         fields = [
             'id',
+            'user',
             'text', 
-            'completed'
+            'completed', 
         ]
