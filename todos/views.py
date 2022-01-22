@@ -6,11 +6,12 @@ from todos.serializers import TodoSerializer
 
 
 class TodoViewSet(viewsets.ModelViewSet):
-    permission_classes = (TodoPermissions, )
+    #permission_classes = (TodoPermissions, )
+    queryset           = Todo.objects.all()
     serializer_class   = TodoSerializer
 
-    def get_queryset(self):
-        user = self.request.user
-        return Todo.objects.filter(user=user)
+    # def get_queryset(self):
+    #     user = self.request.user
+    #     return Todo.objects.filter(user=user).order_by('-id')
 
     
