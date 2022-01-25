@@ -9,4 +9,4 @@ class Todo(models.Model):
     updated_on = models.DateTimeField(auto_now=True, null=True)
 
     def __str__(self):
-        return self.text
+        return f'{self.text} - {self.user}'
